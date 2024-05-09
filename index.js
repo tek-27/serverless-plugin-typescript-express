@@ -32,19 +32,20 @@ class ServerlessPluginTypescriptExpress {
 
   async startLocal () {
     const files = this.listPaths(path.join(this.appPath, inDirectory));
+    console.log('inDirectory ' + inDirectory);
     this.watchFiles(files);
-    this.changeFunctions();
+    // this.changeFunctions();
     await this.runBuild(this.tsConfigPath);
   }
 
   async startDeploy () {
-    this.changeFunctions();
+    // this.changeFunctions();
     await this.runBuild(this.tsConfigPath);
   }
 
   watchFiles (files) {
     const watcher = chokidar.watch(files);
-    this.serverless.cli.log('Serverless offline is running. Watching is enabled!');
+    this.serverless.cli.log('Serverless offline is running. Watching is enabled RDd!');
     watcher.on('change', async (file, stats) => {
       if (stats) {
         await this.runBuild(this.tsConfigPath);
@@ -62,6 +63,7 @@ class ServerlessPluginTypescriptExpress {
     const functions = this.serverless.service.functions;
     const newFunctions = {};
     const outDir = this.loadOutDir();
+    console.log('outDir ' + outDir);
     Object.keys(functions).forEach(fn => {
       newFunctions[fn] = {
         ...functions[fn],

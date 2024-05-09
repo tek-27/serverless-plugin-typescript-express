@@ -1,17 +1,13 @@
 {
-    "name": "serverless-plugin-typescript-express",
-    "version": "1.0.8",
+    "name": "rd-serverless-plugin-typescript-express",
+    "version": "1.0.9",
     "description": "Compile ts files to js with Serverless Framework",
     "main": "index.js",
     "author": "eliasjcjunior",
     "license": "MIT",
     "dependencies": {
-        "chokidar": "^2.0.4",
-        "typescript": "^3.2.2"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/eliasjcjunior/serverless-plugin-typescript-express"
+        "chokidar": "^3.6.0",
+        "typescript": "^5.4.5"
     },
     "keywords": [
         "serverless",
